@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'addTagPage.dart';
+import 'textSnackBar.dart';
 
 class CreateNewTaskPage extends StatefulWidget {
   CreateNewTaskPage({Key key}) : super(key: key);
@@ -257,7 +258,15 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                     color: Colors.white,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  if (_contentController.text == "") {
+                    ScaffoldMessenger.of(context).showSnackBar(textSnackBar("You must enter a task."));
+                  } else if (_dateSelected == "Select Due Date") {
+                    ScaffoldMessenger.of(context).showSnackBar(textSnackBar("Please select a due date."));
+                  } else if (_tagAdded == "Add Tag") {
+                    ScaffoldMessenger.of(context).showSnackBar(textSnackBar("Please add a tag."));
+                  } else {}
+                },
               ),
             ),
           ],
