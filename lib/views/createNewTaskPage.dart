@@ -127,6 +127,26 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                       letterSpacing: _dateSelected == "Select Due Date" ? 0 : 1.2,
                     ),
                   ),
+                  // Select Date
+                  Transform.scale(
+                    scale: 0.8,
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_forward_ios),
+                      onPressed: () async {
+                        final _date = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime.now(),
+                          lastDate: DateTime(2100, 12),
+                        );
+
+                        setState(() {
+                          _dueDate = _date;
+                          _dateSelected = _date.toString().substring(0, 10);
+                        });
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
