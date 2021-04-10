@@ -302,6 +302,10 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                 },
               ),
             ),
+            // Fixed Spacing
+            SizedBox(
+              height: 48,
+            ),
           ],
         ),
       ),
