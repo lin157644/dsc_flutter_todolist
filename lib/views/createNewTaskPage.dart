@@ -9,6 +9,10 @@ class CreateNewTaskPage extends StatefulWidget {
 
 //_privateClass _privateMethod _privateVariable
 class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
+  DateTime _dueDate;
+
+  String _dateSelected = "Select Due Date";
+
   final TextEditingController _contentController = TextEditingController();
 
   @override
@@ -106,6 +110,21 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                     child: Icon(
                       Icons.date_range,
                       color: const Color(0xFFFFBC0A),
+                    ),
+                  ),
+                  // Fixed Spacing
+                  SizedBox(
+                    width: 24,
+                  ),
+                  // Date
+                  Text(
+                    _dateSelected,
+                    style: TextStyle(
+                      fontSize: 18,
+                      height: 1.2,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.grey[700],
+                      letterSpacing: _dateSelected == "Select Due Date" ? 0 : 1.2,
                     ),
                   ),
                 ],
