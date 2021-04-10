@@ -167,8 +167,6 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                 ],
               ),
             ),
-            // Spacing
-                  Spacer(),
             // Tag Selector
             Container(
               height: 100,
@@ -219,6 +217,7 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                     child: IconButton(
                       icon: Icon(Icons.arrow_forward_ios),
                       onPressed: () {},
+                      
                     ),
                   ),
                 ],
