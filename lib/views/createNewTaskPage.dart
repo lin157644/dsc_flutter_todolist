@@ -107,7 +107,7 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
             ),
             // Fixed Spacing
             SizedBox(
-              height: 72,
+              height: 36,
             ),
             // Date Selector
             Container(
