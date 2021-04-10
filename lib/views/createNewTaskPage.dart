@@ -194,7 +194,7 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                   ),
 
                   // Fixed Spacing
-                  SizedBox(
+                  final SizedBox(
                     width: 24,
                   ),
 
@@ -240,8 +240,10 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
               ),
             ),
             // Create Task
-            Container(
+            //Container
+            SizedBox()(
               width: double.infinity,
+              //FlatButton 在Flutter2.0棄用 請改用TextButton
               child: FlatButton(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
