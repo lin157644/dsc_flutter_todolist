@@ -194,7 +194,7 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                   ),
 
                   // Fixed Spacing
-                  final SizedBox(
+                  SizedBox(
                     width: 24,
                   ),
 
