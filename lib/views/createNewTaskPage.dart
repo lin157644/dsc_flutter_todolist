@@ -239,6 +239,26 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                 ],
               ),
             ),
+            // Create Task
+            Container(
+              width: double.infinity,
+              child: FlatButton(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                color: Colors.black,
+                child: Text(
+                  "CREATE TASK",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+                onPressed: () {},
+              ),
+            ),
           ],
         ),
       ),
