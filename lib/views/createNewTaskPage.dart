@@ -34,6 +34,7 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
       resizeToAvoidBottomInset: false, // Prevent Keyboard Overflow
       body: Container(

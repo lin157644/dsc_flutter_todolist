@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'createNewTaskPage.dart';
 import 'textSnackBar.dart';
 import '../models/taskList.dart';
@@ -24,6 +25,7 @@ class _ViewTasksPageState extends State<ViewTasksPage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -65,6 +67,7 @@ class _ViewTasksPageState extends State<ViewTasksPage> {
                     key: UniqueKey(),
                     onDismissed: (direction) {
                       // Remove the item from the data source.
+                      //重繪
                       setState(() {
                         _taskList.task.removeAt(index);
                       });
@@ -227,7 +230,7 @@ class _ViewTasksPageState extends State<ViewTasksPage> {
                     if (_task != null) {
                       _taskList.addTask(_task);
                     }
-
+                    //先新增 然後重排
                     _taskList.sortTask();
                   });
                 },
