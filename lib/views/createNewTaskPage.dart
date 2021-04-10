@@ -6,9 +6,9 @@ class CreateNewTaskPage extends StatefulWidget {
   @override
   _CreateNewTaskPageState createState() => _CreateNewTaskPageState();
 }
+
 //_privateClass _privateMethod _privateVariable
 class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
-
   @override
   void initState() {
     super.initState();
@@ -26,22 +26,36 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 25),
         child: Column(
-            children: [
-                // Close (so fucking small like ad)
-                Container(
-                    width: double.infinity,
-                    alignment: Alignment.centerRight,
-                    child: Transform.scale(
-                        scale: 0.8,
-                        child: IconButton(
-                            icon: Icon(Icons.close),
-                            onPressed: () {
-                                Navigator.pop(context);
-                            },
-                        ),
-                    ),
+          children: [
+            // Close (so fucking small like ad)
+            Container(
+              width: double.infinity,
+              alignment: Alignment.centerRight,
+              child: Transform.scale(
+                scale: 0.8,
+                child: IconButton(
+                  icon: Icon(Icons.close),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                 ),
-            ],
+              ),
+            ),
+            // Title
+            Container(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "Create New Task",
+                style: TextStyle(
+                  fontSize: 50,
+                  height: 1.2,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.grey[800],
+                  letterSpacing: 1.05,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
