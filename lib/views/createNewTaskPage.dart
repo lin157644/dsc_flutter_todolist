@@ -139,6 +139,16 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                           initialDate: DateTime.now(),
                           firstDate: DateTime.now(),
                           lastDate: DateTime(2100, 12),
+                          builder: (BuildContext context, Widget child) {
+                            return Theme(
+                              data: ThemeData.light().copyWith(
+                                colorScheme: ColorScheme.light().copyWith(
+                                  primary: const Color(0xFFFFBC0A),
+                                ),
+                              ),
+                              child: child,
+                            );
+                          },
                         );
 
                         setState(() {
