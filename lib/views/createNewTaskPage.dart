@@ -12,6 +12,7 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
   DateTime _dueDate;
 
   String _dateSelected = "Select Due Date";
+  String _tagAdded = "Add Tag";
 
   final TextEditingController _contentController = TextEditingController();
 
@@ -142,6 +143,7 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                           firstDate: DateTime.now(),
                           lastDate: DateTime(2100, 12),
                           //modify selector color
+                          //overwrite themedata then build
                           builder: (BuildContext context, Widget child) {
                             return Theme(
                               data: ThemeData.light().copyWith(
@@ -159,6 +161,61 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                           _dateSelected = _date.toString().substring(0, 10);
                         });
                       },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            // Tag Selector
+            Container(
+              height: 100,
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.blueGrey[100],
+                ),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                children: [
+                  // Tag Icon
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: const Color(0x05EC0868),
+                    ),
+                    padding: const EdgeInsets.all(16),
+                    child: Icon(
+                      Icons.tag,
+                      color: const Color(0xFFEC0868),
+                    ),
+                  ),
+
+                  // Fixed Spacing
+                  SizedBox(
+                    width: 24,
+                  ),
+
+                  // Tag
+                  Text(
+                    _tagAdded,
+                    style: TextStyle(
+                      fontSize: 18,
+                      height: 1.2,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.grey[700],
+                    ),
+                  ),
+
+                  // Spacing
+                  Spacer(),
+
+                  // Add Tag
+                  Transform.scale(
+                    scale: 0.8,
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_forward_ios),
+                      onPressed: () {},
                     ),
                   ),
                 ],
