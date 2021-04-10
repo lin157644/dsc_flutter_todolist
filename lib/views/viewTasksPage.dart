@@ -28,16 +28,37 @@ class _ViewTasksPageState extends State<ViewTasksPage> {
           children: [
             // Title
             Container(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Tasks",
-                style: TextStyle(
-                  fontSize: 50,
-                  height: 1.2,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.grey[800],
-                  letterSpacing: 1.05,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                    "Tasks",
+                    style: TextStyle(
+                    fontSize: 50,
+                    height: 1.2,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.grey[800],
+                    letterSpacing: 1.05,
+                    ),
                 ),
+            ),
+            // Create Task
+            Container(
+              width: double.infinity,
+              child: FlatButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                ),
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                color: Colors.black,
+                child: Text(
+                    "ADD TASK",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontSize: 18,
+                        color: Colors.white,
+                    ),
+                ),
+                onPressed: () async {
+                },
               ),
             ),
           ],
