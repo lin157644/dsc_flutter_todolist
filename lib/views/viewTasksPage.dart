@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'createNewTaskPage.dart';
+import 'textSnackBar.dart';
 import '../models/taskList.dart';
 
 class ViewTasksPage extends StatefulWidget {
@@ -62,13 +63,22 @@ class _ViewTasksPageState extends State<ViewTasksPage> {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                        setState(() {
-                          _taskList.task[index].isDone =
-                              !_taskList.task[index].isDone;
-                          _taskList.sortTask();
-                        });
-                      },
-                    onLongPress: () {},
+                      setState(() {
+                        _taskList.task[index].isDone = !_taskList.task[index].isDone;
+                        _taskList.sortTask();
+                      });
+                    },
+                    onLongPress: () {
+                      setState(() {
+                        _taskList.task[index].isPinned = !_taskList.task[index].isPinned;
+
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          textSnackBar(_taskList.task[index].isPinned ? "Task pinned." : "Task unpinned."),
+                        );
+
+                        _taskList.sortTask();
+                      });
+                    },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
                         vertical: 18,
