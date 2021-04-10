@@ -68,6 +68,20 @@ class _ViewTasksPageState extends State<ViewTasksPage> {
                 },
               ),
             ),
+            // Title
+            Container(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                    "Create New Task",
+                    style: TextStyle(
+                        fontSize: 50,
+                        height: 1.2,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.grey[800],
+                        letterSpacing: 1.05,
+                    ),
+                ),
+            ),
           ],
         ),
       ),
