@@ -186,7 +186,22 @@ class _ViewTasksPageState extends State<ViewTasksPage> {
                     color: Colors.white,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () async {
+                  final _task = await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => CreateNewTaskPage(),
+                    ),
+                  );
+
+                  setState(() {
+                    if (_task != null) {
+                      _taskList.addTask(_task);
+                    }
+
+                    _taskList.sortTask();
+                  });
+                },
               ),
             ),
 
