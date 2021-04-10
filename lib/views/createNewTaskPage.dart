@@ -26,8 +26,22 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 25),
         child: Column(
-          children: [
-          ],
+            children: [
+                // Close (so fucking small like ad)
+                Container(
+                    width: double.infinity,
+                    alignment: Alignment.centerRight,
+                    child: Transform.scale(
+                        scale: 0.8,
+                        child: IconButton(
+                            icon: Icon(Icons.close),
+                            onPressed: () {
+                                Navigator.pop(context);
+                            },
+                        ),
+                    ),
+                ),
+            ],
         ),
       ),
     );
