@@ -240,8 +240,7 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
               ),
             ),
             // Create Task
-            //Container
-            Container()(
+            Container(
               width: double.infinity,
               //FlatButton 在Flutter2.0棄用 請改用TextButton
               child: FlatButton(
