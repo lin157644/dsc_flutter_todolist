@@ -77,6 +77,10 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                 ),
               ),
             ),
+            // Fixed Spacing
+            SizedBox(
+              height: 48,
+            ),
             // Input Task TextField
             TextField(
               controller: _contentController,
@@ -100,6 +104,10 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                   color: Colors.grey[400],
                 ),
               ),
+            ),
+            // Fixed Spacing
+            SizedBox(
+              height: 72,
             ),
             // Date Selector
             Container(
@@ -178,6 +186,10 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                 ],
               ),
             ),
+            // Fixed Spacing
+            SizedBox(
+              height: 24,
+            ),
             // Tag Selector
             Container(
               height: 100,
@@ -249,6 +261,8 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                 ],
               ),
             ),
+            // Spacing
+            Spacer(),
             // Create Task
             Container(
               width: double.infinity,
