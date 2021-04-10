@@ -61,7 +61,13 @@ class _ViewTasksPageState extends State<ViewTasksPage> {
                 physics: BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
                   return GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                        setState(() {
+                          _taskList.task[index].isDone =
+                              !_taskList.task[index].isDone;
+                          _taskList.sortTask();
+                        });
+                      },
                     onLongPress: () {},
                     child: Container(
                       padding: const EdgeInsets.symmetric(
