@@ -41,6 +41,10 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
         padding: const EdgeInsets.symmetric(horizontal: 25),
         child: Column(
           children: [
+            // Fixed Spacing
+            SizedBox(
+              height: 24,
+            ),
             // Close (so fucking small like ad)
             Container(
               width: double.infinity,
@@ -54,6 +58,10 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                   },
                 ),
               ),
+            ),
+            // Fixed Spacing
+            SizedBox(
+              height: 6,
             ),
             // Title
             Container(
@@ -261,14 +269,11 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                 ),
                 onPressed: () {
                   if (_contentController.text == "") {
-                    ScaffoldMessenger.of(context)
-                        .showSnackBar(textSnackBar("You must enter a task."));
+                    ScaffoldMessenger.of(context).showSnackBar(textSnackBar("You must enter a task."));
                   } else if (_dateSelected == "Select Due Date") {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        textSnackBar("Please select a due date."));
+                    ScaffoldMessenger.of(context).showSnackBar(textSnackBar("Please select a due date."));
                   } else if (_tagAdded == "Add Tag") {
-                    ScaffoldMessenger.of(context)
-                        .showSnackBar(textSnackBar("Please add a tag."));
+                    ScaffoldMessenger.of(context).showSnackBar(textSnackBar("Please add a tag."));
                   } else {
                     Navigator.pop(
                       context,
