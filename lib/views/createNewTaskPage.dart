@@ -78,9 +78,9 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
               ),
             ),
             // Fixed Spacing
-            SizedBox(
-              height: 48,
-            ),
+            // SizedBox(
+            //   height: 48,
+            // ),
             // Input Task TextField
             TextField(
               controller: _contentController,
@@ -107,7 +107,7 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
             ),
             // Fixed Spacing
             SizedBox(
-              height: 36,
+              height: 72,
             ),
             // Date Selector
             Container(
