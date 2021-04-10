@@ -62,42 +62,54 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
             ),
             // Input Task TextField
             TextField(
-                controller: _contentController,
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.grey[800],
-                    letterSpacing: 1.05,
+              controller: _contentController,
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey[800],
+                letterSpacing: 1.05,
+              ),
+              decoration: InputDecoration(
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blueGrey[100]),
                 ),
-                decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blueGrey[100]),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blueGrey[300]),
-                    ),
-                    hintText: "Task Name",
-                    hintStyle: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.grey[400],
-                    ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blueGrey[300]),
                 ),
+                hintText: "Task Name",
+                hintStyle: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey[400],
+                ),
+              ),
             ),
             // Date Selector
             Container(
-                height: 100,
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                    border: Border.all(
-                    color: Colors.blueGrey[100],
+              height: 100,
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.blueGrey[100],
+                ),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                children: [
+                  // Date Icon
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: const Color(0x11FFBC0A),
                     ),
-                    borderRadius: BorderRadius.circular(10),
-                ),
-                child: Row(
-                    children: [
-                    ],
-                ),
+                    padding: const EdgeInsets.all(16),
+                    child: Icon(
+                      Icons.date_range,
+                      color: const Color(0xFFFFBC0A),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
