@@ -4,6 +4,7 @@ class CreateNewTaskPage extends StatefulWidget {
   CreateNewTaskPage({Key key}) : super(key: key);
 
   @override
+  //=> foo() => bar() bar(foo())
   _CreateNewTaskPageState createState() => _CreateNewTaskPageState();
 }
 
@@ -166,6 +167,8 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                 ],
               ),
             ),
+            // Spacing
+                  Spacer(),
             // Tag Selector
             Container(
               height: 100,
