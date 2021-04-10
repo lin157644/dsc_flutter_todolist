@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'addTagPage.dart';
 
 class CreateNewTaskPage extends StatefulWidget {
   CreateNewTaskPage({Key key}) : super(key: key);
@@ -216,8 +217,23 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                     scale: 0.8,
                     child: IconButton(
                       icon: Icon(Icons.arrow_forward_ios),
-                      onPressed: () {},
-                      
+                      onPressed: () async {
+                        final _tag = await showModalBottomSheet(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10.0),
+                              topRight: Radius.circular(10.0),
+                            ),
+                          ),
+                          isScrollControlled: true, // won't scroll when keyboard came out if isScrollControlled is set to false
+                          context: context,
+                          builder: (context) => AddTagPage(),
+                        );
+
+                        setState(() {
+                          _tagAdded = _tag ?? _tagAdded;
+                        });
+                      },
                     ),
                   ),
                 ],
